@@ -1,7 +1,15 @@
-/* CSS BY YOUR NAME */
+/* CSS BY COOPER JOHNSON */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -65,7 +73,133 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+*{
+    font-family: var(--font);
+}
 
+html{
+    width: fit-content;
+}
+
+header{
+    background-color: black;
+    width: 100;
+    font-family: var(--font);
+    border-bottom: solid 5px var(--blue);
+}
+
+h1{
+    color: var(--blue);
+    font-size: 2rem;
+    padding-left: 4rem;
+    padding-top: 3rem;
+}
+/* HAMBURGER */
+
+/* nav {
+  background-color: maroon;
+} */
+nav ul {
+  width: 100%;
+  margin:0;
+  padding:0;
+  list-style:none;
+  overflow:hidden;
+  text-align:center;
+  max-height: 0;
+}
+nav h2 {
+  visibility:hidden;
+  height:1px;
+}
+nav li a {
+  display:block;
+  font-family:sans-serif;
+  font-size:1.5rem;
+  padding:1rem;
+  text-transform:uppercase;
+  font-weight:bold;
+  text-decoration:none;
+  color: white;
+  transition: background-color .3s ease-in;
+}
+nav a:hover, nav input:hover {
+    background-color: black;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+/* BUILDS THE MIDDLE LINE OF THE HAMBURGER */
+label span {
+    background-color: white;
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+/* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
+label span:before, label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+  display:none;
+}
+/* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
+input:checked ~ ul {
+    max-height: 500px;
+}
+/* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
+input:checked ~ label span {
+    background: transparent;
+}
+/* ROTATES THE TOP LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+/* ROTATES THE BOTTOM LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+/* LOCATION OF THE HAMBURGER */
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+@media screen and (min-width: 600px){
+  nav ul {
+    overflow:visible;
+    position:absolute;
+    top: 1.5rem;
+    left:.5rem;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+  }
+  nav li a {
+    display:inline-block;
+}
+  label span, input {
+    display:none;
+  }
+}
+
+/* TODO ?? @media screen and (min-width: 400px) */
+
+/* done */
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -73,8 +207,9 @@ table {
     margin: 0 auto;
 }
 
+/* done */
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+#innovation {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -82,12 +217,13 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    width: 100%;
 }
 
+/* done */
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+.svg{
     content: "";
-
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -107,6 +243,8 @@ table {
     padding: 1rem;
     position: relative;
 }
+
+/* follow up??? */
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 50px;
